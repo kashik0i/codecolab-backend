@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { TerminalGateway } from './terminal.gateway';
 
-@Module({})
+@Module({ providers: [TerminalGateway] })
 export class TerminalModule {}

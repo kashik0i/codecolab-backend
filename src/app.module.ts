@@ -2,13 +2,12 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { EventsModule } from './events/events.module';
-import { TerminalGateway } from './terminal/terminal.gateway';
 import { TerminalModule } from './terminal/terminal.module';
-import { EventsGateway } from './events/events.gateway';
+import { DockerManagerModule } from './docker-manager/docker-manager.module';
 
 @Module({
-  imports: [EventsModule, TerminalModule],
+  imports: [EventsModule, TerminalModule, DockerManagerModule],
   controllers: [AppController],
-  providers: [AppService, EventsGateway, TerminalGateway],
+  providers: [AppService],
 })
 export class AppModule {}
